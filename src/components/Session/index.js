@@ -17,8 +17,13 @@ class Session extends React.Component {
          >
            -
          </button>
-        <span id="session-length">{this.props.sessionTime}</span>
-        <button id="session-increment"> + </button>
+        <span id="session-length">{this.props.sessionTime} minutes</span>
+        <button
+          id="session-increment"
+          onClick={this.props.incrementSessionTime}
+        >
+          +
+        </button>
        </div>
      );
    }

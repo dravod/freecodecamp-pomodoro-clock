@@ -29,6 +29,10 @@ class App extends React.Component {
     }
   }
 
+  incrementSessionTime = () => {
+    this.setState({sessionTime: this.state.sessionTime + 1})
+  }
+
   render() {
     return (
       <div className="App">
@@ -47,6 +51,7 @@ class App extends React.Component {
           <Session
             sessionTime={this.state.sessionTime}
             decrementSessionTime={this.decrementSessionTime}
+            incrementSessionTime={this.incrementSessionTime}
           >
           </Session>
         </main>
