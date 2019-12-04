@@ -11,21 +11,8 @@ function App() {
         </h1>
       </header>
       <main>
-        <Break>
-          <label id="break-label">
-            <span>"Break Length"</span>
-          </label>
-          <button id="break-decrement"></button>
-          <button id="break-increment"></button>
-        </Break>
-
-        <Session>
-          <label id="session-label">
-            <span>"Session Length"</span>
-          </label>
-          <button id="session-decrement"></button>
-          <button id="session-increment"></button>
-        </Session>
+        <Break></Break>
+        <Session></Session>
       </main>
       <footer>
       </footer>
@@ -34,21 +21,62 @@ function App() {
 }
 
 class Break extends React.Component {
+<<<<<<< HEAD
   constructor(props) {
     super(props);
     this.state = {
       break: 1
     };
+=======
+   constructor(props) {
+     super(props);
+     this.state = {
+       value: 5,
+     };
+>>>>>>> 4121ae4de449782d4f57740c467f0c0224c1861d
+   }
+   render(){
+     return(
+       <div>
+         <label id="break-label">
+           <span>"Break Length"</span>
+         </label>
+         <button id="break-decrement"></button>
+         <span id="break-length">{this.state.value}</span>
+         <button id="break-increment"></button>
+       </div>
+     );
    }
 }
 
 class Session extends React.Component {
+<<<<<<< HEAD
   constructor(props) {
     super(props);
     this.state = {
       session: 25
     };
   }
+=======
+   constructor(props) {
+     super(props);
+     this.state = {
+       value: 25,
+     };
+   }
+   render(){
+     return(
+       <div>
+         <label id="session-label">
+           <span>"Session Length"</span>
+         </label>
+         <button id="session-decrement"></button>
+        <span id="session-length">{this.state.value}</span>
+         <button id="session-increment"></button>
+       </div>
+     );
+   }
+>>>>>>> 4121ae4de449782d4f57740c467f0c0224c1861d
 }
 
 
