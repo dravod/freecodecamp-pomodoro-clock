@@ -6,31 +6,57 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      breakTime: 5,
-      sessionTime: 25
+      breakTimeMinutes: 5,
+      breakTimeSeconds: 10,
+      sessionTimeMinutes: 25,
+      sessionTimeSeconds: 10
     }
   }
 
-  decrementBreakTime = () => {
-    if (this.state.breakTime > 0) {
-      this.setState({breakTime: this.state.breakTime - 1})
+  decrementBreakTimeMinutes = () => {
+    if (this.state.breakTimeMinutes > 0) {
+      this.setState({breakTimeMinutes: this.state.breakTimeMinutes - 1})
     }
   }
 
-  incrementBreakTime = () => {
-    if (this.state.breakTime < this.state.sessionTime) {
-      this.setState({breakTime: this.state.breakTime + 1})
+  incrementBreakTimeMinutes = () => {
+    // if (this.state.breakTimeMinutes < this.state.sessionTimeMinutes) {
+      this.setState({breakTimeMinutes: this.state.breakTimeMinutes + 1})
+    // }
+  }
+
+  decrementBreakTimeSeconds = () => {
+    if (this.state.breakTimeSeconds > 0) {
+      this.setState({breakTimeSeconds: this.state.breakTimeSeconds - 1})
     }
   }
 
-  decrementSessionTime = () => {
-    if (this.state.sessionTime > this.state.breakTime) {
-      this.setState({sessionTime: this.state.sessionTime - 1})
+  incrementBreakTimeSeconds = () => {
+    if (this.state.breakTimeSeconds < 59) {
+      this.setState({breakTimeSeconds: this.state.breakTimeSeconds + 1})
     }
   }
 
-  incrementSessionTime = () => {
-    this.setState({sessionTime: this.state.sessionTime + 1})
+  decrementSessionTimeMinutes = () => {
+    // if (this.state.sessionTimeMinutes > this.state.breakTimeMinutes) {
+      this.setState({sessionTimeMinutes: this.state.sessionTimeMinutes - 1})
+    // }
+  }
+
+  incrementSessionTimeMinutes = () => {
+    this.setState({sessionTimeMinutes: this.state.sessionTimeMinutes + 1})
+  }
+
+  decrementSessionTimeSeconds = () => {
+    if (this.state.sessionTimeSeconds > 0) {
+      this.setState({sessionTimeSeconds: this.state.sessionTimeSeconds - 1})
+    }
+  }
+
+  incrementSessionTimeSeconds = () => {
+    if (this.state.sessionTimeSeconds < 59) {
+      this.setState({sessionTimeSeconds: this.state.sessionTimeSeconds + 1})
+    }
   }
 
   render() {
@@ -43,15 +69,22 @@ class App extends React.Component {
         </header>
         <main>
           <Break
-            breakTime={this.state.breakTime}
-            decrementBreakTime={this.decrementBreakTime}
-            incrementBreakTime={this.incrementBreakTime}
+            breakTimeMinutes={this.state.breakTimeMinutes}
+            decrementBreakTimeMinutes={this.decrementBreakTimeMinutes}
+            incrementBreakTimeMinutes={this.incrementBreakTimeMinutes}
+            breakTimeSeconds={this.state.breakTimeSeconds}
+            decrementBreakTimeSeconds={this.decrementBreakTimeSeconds}
+            incrementBreakTimeSeconds={this.incrementBreakTimeSeconds}
             >
           </Break>
+          <br/>
           <Session
-            sessionTime={this.state.sessionTime}
-            decrementSessionTime={this.decrementSessionTime}
-            incrementSessionTime={this.incrementSessionTime}
+            sessionTimeMinutes={this.state.sessionTimeMinutes}
+            decrementSessionTimeMinutes={this.decrementSessionTimeMinutes}
+            incrementSessionTimeMinutes={this.incrementSessionTimeMinutes}
+            sessionTimeSeconds={this.state.sessionTimeSeconds}
+            decrementSessionTimeSeconds={this.decrementSessionTimeSeconds}
+            incrementSessionTimeSeconds={this.incrementSessionTimeSeconds}
           >
           </Session>
         </main>

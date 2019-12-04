@@ -11,20 +11,34 @@ class Session extends React.Component {
          <label id="session-label">
            <span>"Session Length"</span>
          </label>
+         <br/>
          <button
           id="session-decrement"
-          onClick={this.props.decrementSessionTime}
+          onClick={this.props.decrementSessionTimeMinutes}
          >
            -
          </button>
-        <span id="session-length">{this.props.sessionTime} minutes</span>
+        <span id="session-length">{this.props.sessionTimeMinutes} minutes</span>
         <button
           id="session-increment"
-          onClick={this.props.incrementSessionTime}
+          onClick={this.props.incrementSessionTimeMinutes}
         >
           +
         </button>
+        <br/>
+        <button
+         onClick={this.props.decrementSessionTimeSeconds}
+        >
+          -
+        </button>
+         <span>{this.props.sessionTimeSeconds} seconds</span>
+         <button
+           onClick={this.props.incrementSessionTimeSeconds}
+         >
+         +
+       </button>
        </div>
+
      );
    }
 }
