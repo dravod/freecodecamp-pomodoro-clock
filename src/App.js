@@ -11,21 +11,8 @@ function App() {
         </h1>
       </header>
       <main>
-        <Break>
-          <label id="break-label">
-            <span>"Break Length"</span>
-          </label>
-          <button id="break-decrement"></button>
-          <button id="break-increment"></button>
-        </Break>
-
-        <Session>
-          <label id="session-label">
-            <span>"Session Length"</span>
-          </label>
-          <button id="session-decrement"></button>
-          <button id="session-increment"></button>
-        </Session>
+        <Break></Break>
+        <Session></Session>
       </main>
       <footer>
       </footer>
@@ -37,8 +24,20 @@ class Break extends React.Component {
    constructor(props) {
      super(props);
      this.state = {
-
+       value: 5,
      };
+   }
+   render(){
+     return(
+       <div>
+         <label id="break-label">
+           <span>"Break Length"</span>
+         </label>
+         <button id="break-decrement"></button>
+         <span id="break-length">{this.state.value}</span>
+         <button id="break-increment"></button>
+       </div>
+     );
    }
 }
 
@@ -46,8 +45,20 @@ class Session extends React.Component {
    constructor(props) {
      super(props);
      this.state = {
-
+       value: 25,
      };
+   }
+   render(){
+     return(
+       <div>
+         <label id="session-label">
+           <span>"Session Length"</span>
+         </label>
+         <button id="session-decrement"></button>
+        <span id="session-length">{this.state.value}</span>
+         <button id="session-increment"></button>
+       </div>
+     );
    }
 }
 
