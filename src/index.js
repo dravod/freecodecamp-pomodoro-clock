@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import AppClock from "./components/AppClock"
 import * as serviceWorker from './serviceWorker';
-import Routes from "./Routes";
+import Routes from "./Routes.js";
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
