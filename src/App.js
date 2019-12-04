@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Routes from "./Routes";
 import Break from './components/Break/index.js'
+import Session from './components/Session/index.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -25,6 +26,12 @@ class App extends React.Component {
     }
   }
 
+  decrementSessionTime = () => {
+    if (this.state.sessionTime > this.state.breakTime) {
+      this.setState({sessionTime: this.state.sessionTime - 1})
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -40,7 +47,11 @@ class App extends React.Component {
             incrementBreakTime={this.incrementBreakTime}
             >
           </Break>
-          <Session></Session>
+          <Session
+            sessionTime={this.state.sessionTime}
+            decrementSessionTime={this.decrementSessionTime}
+          >
+          </Session>
         </main>
         <footer>
         </footer>
@@ -48,29 +59,5 @@ class App extends React.Component {
     );
   }
 }
-
-
-
-class Session extends React.Component {
-   constructor(props) {
-     super(props);
-     this.state = {
-       value: 25,
-     };
-   }
-   render(){
-     return(
-       <div>
-         <label id="session-label">
-           <span>"Session Length"</span>
-         </label>
-         <button id="session-increment"> - </button>
-        <span id="session-length">{this.state.value}</span>
-        <button id="session-decrement"> + </button>
-       </div>
-     );
-   }
-}
-
 
 export default App;
