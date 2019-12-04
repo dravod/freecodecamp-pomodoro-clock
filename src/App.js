@@ -70,11 +70,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 class="app-title">
-            Pomodoro Clock
-          </h1>
-        </header>
         <main>
           <Break
             breakTimeMinutes={this.state.breakTimeMinutes}
@@ -97,8 +92,6 @@ class App extends React.Component {
           </Session>
           <Timer playPause={this.playPause}/>
         </main>
-        <footer>
-        </footer>
       </div>
     );
   }
