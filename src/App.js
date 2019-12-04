@@ -92,7 +92,7 @@ class Timer extends React.Component {
        value: 25,
      };
    }
-   handleClick = () => {
+   handleClick = (e) => {
 
    }
    render(){
