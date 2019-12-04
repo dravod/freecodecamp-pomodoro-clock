@@ -1,13 +1,16 @@
 import React from "react";
+import {Component} from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import AppClock from "./components/AppClock
+import AppClock from "./components/AppClock";
+import LoginPage from "./containers/LoginPage";
 
-const Routes = ()=> {
+export default class Routes extends Component {
+render(){
   return (
     <Router>
       <div>
@@ -29,9 +32,11 @@ const Routes = ()=> {
           <Route path="/">
             <AppClock />
           </Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
         </Switch>
       </div>
     </Router>
-  );
+  )}
 }
-export default Routes;

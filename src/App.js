@@ -1,88 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Routes from "./Routes";
-import AppClock from "./components/AppClock";
+import Routes from "./Routes.js";
+import Break from './components/Break/index.js'
+import Session from './components/Session/index.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1 class="app-title">
-          Pomodoro Clock
-        </h1>
-      </header>
-      <main>
-        <Break/>
-        <Session/>
-        <Timer/>
-      </main>
-      <footer>
-      </footer>
-    </div>
-  );
-}
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      breakTime: 5,
+      sessionTime: 25
+    }
+  }
 
-class Break extends React.Component {
-   constructor(props) {
-     super(props);
-     this.state = {
-       value: 5,
-     };
-   }
+  decrementBreakTime = () => {
+    if (this.state.breakTime > 0) {
+      this.setState({breakTime: this.state.breakTime - 1})
+    }
+  }
 
-   render(){
+  incrementBreakTime = () => {
+    if (this.state.breakTime < this.state.sessionTime) {
+      this.setState({breakTime: this.state.breakTime + 1})
+    }
+  }
 
-     const decrementTime = () => {
-       if (this.state.value > 0) {
-         this.setState({value: this.state.value - 1})
-      }
-     }
+  decrementSessionTime = () => {
+    if (this.state.sessionTime > this.state.breakTime) {
+      this.setState({sessionTime: this.state.sessionTime - 1})
+    }
+  }
 
-     const incrementTime = () => {
-       this.setState({value: this.state.value + 1})
-     }
-
-     return(
-       <div>
-         <label id="break-label">
-           <span>"Break Length"</span>
-         </label>
-         <button
-          id="break-decrement"
-          onClick={() => decrementTime()}
-          > -
-          </button>
-         <span id="break-length">{this.state.value}</span>
-         <button
-          id="break-increment"
-          onClick={() => incrementTime()}
-         > +
-         </button>
-       </div>
-     );
-   }
-}
-
-class Session extends React.Component {
-   constructor(props) {
-     super(props);
-     this.state = {
-       value: 25,
-     };
-   }
-   render(){
-     return(
-       <div>
-         <label id="session-label">
-           <span>"Session Length"</span>
-         </label>
-         <button id="session-increment"> - </button>
-        <span id="session-length">{this.state.value}</span>
-        <button id="session-decrement"> + </button>
-       </div>
-     );
-   }
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1 class="app-title">
+            Pomodoro Clock
+          </h1>
+        </header>
+        <main>
+          <Break
+            breakTime={this.state.breakTime}
+            decrementBreakTime={this.decrementBreakTime}
+            incrementBreakTime={this.incrementBreakTime}
+            >
+          </Break>
+          <Session
+            sessionTime={this.state.sessionTime}
+            decrementSessionTime={this.decrementSessionTime}
+          >
+          </Session>
+        </main>
+        <footer>
+        </footer>
+      </div>
+    );
+  }
 }
 
 class Timer extends React.Component {
@@ -108,4 +80,5 @@ class Timer extends React.Component {
      );
    }
 }
+
 export default App;
