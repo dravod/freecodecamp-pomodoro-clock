@@ -1,6 +1,6 @@
 import React from 'react';
-import FormField from '../Utility/FormField';
-import Button from '../Utility/Button';
+import FormField from '../../components/Util/FormField';
+import Button from '../../components/Util/Button';
 import {Link} from "react-router-dom";
 import './Login.css';
 
