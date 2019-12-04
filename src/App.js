@@ -2,65 +2,54 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Routes from "./Routes";
+import Break from './components/Break/index.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1 class="app-title">
-          Pomodoro Clock
-        </h1>
-      </header>
-      <main>
-        <Break></Break>
-        <Session></Session>
-      </main>
-      <footer>
-      </footer>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      breakTime: 5,
+      sessionTime: 25
+    }
+  }
+
+  decrementBreakTime = () => {
+    if (this.state.breakTime > 0) {
+      this.setState({breakTime: this.state.breakTime - 1})
+    }
+  }
+
+  incrementBreakTime = () => {
+    if (this.state.breakTime < this.state.sessionTime) {
+      this.setState({breakTime: this.state.breakTime + 1})
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1 class="app-title">
+            Pomodoro Clock
+          </h1>
+        </header>
+        <main>
+          <Break
+            breakTime={this.state.breakTime}
+            decrementBreakTime={this.decrementBreakTime}
+            incrementBreakTime={this.incrementBreakTime}
+            >
+          </Break>
+          <Session></Session>
+        </main>
+        <footer>
+        </footer>
+      </div>
+    );
+  }
 }
 
-class Break extends React.Component {
-   constructor(props) {
-     super(props);
-     this.state = {
-       value: 5,
-     };
-   }
 
-   render(){
-
-     const decrementTime = () => {
-       if (this.state.value > 0) {
-         this.setState({value: this.state.value - 1})
-      }
-     }
-
-     const incrementTime = () => {
-       this.setState({value: this.state.value + 1})
-     }
-
-     return(
-       <div>
-         <label id="break-label">
-           <span>"Break Length"</span>
-         </label>
-         <button
-          id="break-decrement"
-          onClick={() => decrementTime()}
-          > -
-          </button>
-         <span id="break-length">{this.state.value}</span>
-         <button
-          id="break-increment"
-          onClick={() => incrementTime()}
-         > +
-         </button>
-       </div>
-     );
-   }
-}
 
 class Session extends React.Component {
    constructor(props) {
