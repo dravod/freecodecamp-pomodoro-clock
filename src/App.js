@@ -23,9 +23,9 @@ class App extends React.Component {
   }
 
   incrementBreakTimeMinutes = () => {
-    if (this.state.breakTimeMinutes < this.state.sessionTimeMinutes) {
+    // if (this.state.breakTimeMinutes < this.state.sessionTimeMinutes) {
       this.setState({breakTimeMinutes: this.state.breakTimeMinutes + 1})
-    }
+    // }
   }
 
   decrementBreakTimeSeconds = () => {
@@ -41,9 +41,9 @@ class App extends React.Component {
   }
 
   decrementSessionTimeMinutes = () => {
-    if (this.state.sessionTimeMinutes > this.state.breakTimeMinutes) {
+    // if (this.state.sessionTimeMinutes > this.state.breakTimeMinutes) {
       this.setState({sessionTimeMinutes: this.state.sessionTimeMinutes - 1})
-    }
+    // }
   }
 
   incrementSessionTimeMinutes = () => {
