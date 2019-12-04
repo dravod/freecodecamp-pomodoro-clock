@@ -6,8 +6,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import AppClock from "./components/AppClock
-import LoginPage from "./containers/LoginPage"
+import AppClock from "./components/AppClock";
+import LoginPage from "./containers/LoginPage";
 
 export default class Routes extends Component {
 render(){
@@ -40,4 +40,3 @@ render(){
     </Router>
   )}
 }
-export default Routes;
