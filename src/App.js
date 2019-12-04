@@ -11,9 +11,6 @@ function App() {
         </h1>
       </header>
       <main>
-        <h2>
-          Testing for Sam's branch
-        </h2>
       </main>
       <footer>
       </footer>
