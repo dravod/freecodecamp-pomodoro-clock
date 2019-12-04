@@ -34,21 +34,21 @@ function App() {
 }
 
 class Break extends React.Component {
-   constructor(props) {
-     super(props);
-     this.state = {
-
-     };
+  constructor(props) {
+    super(props);
+    this.state = {
+      break: 1
+    };
    }
 }
 
 class Session extends React.Component {
-   constructor(props) {
-     super(props);
-     this.state = {
-
-     };
-   }
+  constructor(props) {
+    super(props);
+    this.state = {
+      session: 25
+    };
+  }
 }
 
 
