@@ -1,6 +1,10 @@
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 import Routes from "./Routes.js";
 import Break from './components/Break/index.js'
 import Session from './components/Session/index.js'
+import Timer from './components/Timer/index.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -17,6 +21,10 @@ class App extends React.Component {
     if (this.state.breakTimeMinutes > 0) {
       this.setState({breakTimeMinutes: this.state.breakTimeMinutes - 1})
     }
+  }
+
+  playPause = (e) => {
+    console.log(e.target, Date.now());
   }
 
   incrementBreakTimeMinutes = () => {
@@ -87,36 +95,13 @@ class App extends React.Component {
             incrementSessionTimeSeconds={this.incrementSessionTimeSeconds}
           >
           </Session>
+          <Timer playPause={this.playPause}/>
         </main>
         <footer>
         </footer>
       </div>
     );
   }
-}
-
-class Timer extends React.Component {
-   constructor(props) {
-     super(props);
-     this.state = {
-       value: 25,
-     };
-   }
-   handleClick = (e) => {
-
-   }
-   render(){
-     return(
-       <div>
-         <label id="timer-label">
-           <span>Session</span>
-         </label>
-         <span id="time-left">60:00</span>
-         <button id="start_stop">Play / Pause</button>
-         <button id="reset">Reset</button>
-       </div>
-     );
-   }
 }
 
 export default App;
