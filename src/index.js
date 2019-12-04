@@ -4,8 +4,9 @@ import './index.css';
 import App from './App';
 import AppClock from "./components/AppClock"
 import * as serviceWorker from './serviceWorker';
+import Routes from "./Routes";
 
-ReactDOM.render(<AppClock />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
