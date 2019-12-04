@@ -16,7 +16,7 @@ class Break extends React.Component {
           onClick={this.props.decrementBreakTime}
           > -
           </button>
-         <span id="break-length">{this.props.breakTime}</span>
+         <span id="break-length">{this.props.breakTime} minutes</span>
          <button
           id="break-increment"
           onClick={this.props.incrementBreakTime}
