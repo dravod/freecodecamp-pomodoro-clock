@@ -4,7 +4,7 @@ const LoginHeader= ()=>{
   return(
     <div>
       <h1 className="Login-header">
-        
+        Time to Time!
       </h1>
     </div>
   )

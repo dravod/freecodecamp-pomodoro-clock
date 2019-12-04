@@ -20,16 +20,16 @@ render(){
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/signup">SIGN UP!</Link>
             </li>
           </ul>
         </nav>
 
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <AppClock />
           </Route>
           <Route path="/login">

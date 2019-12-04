@@ -1,7 +1,7 @@
 import React from 'react';
-import FormField from '../../components/Util/FormField';
-import Button from '../../components/Util/Button';
-import {Link} from "react-router-dom";
+
+import FormField from "../../components/Util/FormField";
+import Button from "../../components/Util/Button";
 import './Login.css';
 
 export default class LoginForm extends React.Component{
@@ -26,8 +26,8 @@ export default class LoginForm extends React.Component{
       handleSubmit(event) {
       }
     render(){
+      const login = this.handleButtonClick("/login")
       const signUp = this.handleButtonClick("/signup")
-      debugger
       return(
         <div className="Login-form">
           <form>
@@ -35,7 +35,7 @@ export default class LoginForm extends React.Component{
             {FormField("Login-field", "Login-field-label", "Password", this.state.Password, this.handleChange, "Login-field-input")}
           </form>
           <div className= "Login-button-box">
-            <Link to="/home">Login</Link>
+            {Button("Login-button", login, "LOG IN", "Login-button-label")}
             {Button("Login-button", signUp, "SIGN UP", "Login-button-label")}
           </div>
         </div>

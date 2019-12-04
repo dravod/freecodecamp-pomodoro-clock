@@ -1,3 +1,10 @@
+.login-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
 .Login-header {
   color: lightskyblue;
   font-size: 40px;
@@ -14,13 +21,18 @@
   background-color: white;
   border-color: #0c0e09;
   border-width: thick;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 
 .Login-field {
   color: lightgrey;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 10px;
 }
 
@@ -32,7 +44,7 @@
 }
 .Login-button-box {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 .Login-button {
   color: white;
