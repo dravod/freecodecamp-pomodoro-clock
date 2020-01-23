@@ -36,7 +36,7 @@ render(){
 
         <Switch>
           <Route exact path="/">
-            <App />
+            <AppClock />
           </Route>
           <Route path="/login">
             <LoginPage />

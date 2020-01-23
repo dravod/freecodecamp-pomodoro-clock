@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import App from "./App.js"
+import AppClock from "../../components/AppClock"
 
 export default class HomePage extends Component {
 
@@ -7,7 +7,7 @@ export default class HomePage extends Component {
     render(){
         return(
             <div>
-                <App/>
+                <AppClock/>
             </div>
         )
     }
